@@ -1,0 +1,10 @@
+.pagination li.page-item .page-link{
+    color:#0e345a;
+   
+}
+.pagination li.page-item.active .page-link{
+    color:#fff;
+    background: #eda361;
+    border: none;
+   
+}

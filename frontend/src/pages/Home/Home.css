@@ -1,0 +1,71 @@
+
+.div-btn-new .welcome-text-div{
+    font-family: "Noto Serif", serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.div-btn-new h1{
+    color: #0e345a;
+    font-size: 50px;
+}
+.div-btn-new h2{
+    color: #EDA361;
+    /* font-size: 50px; */
+}
+li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bi-4-square, 
+.bi-5-square, 
+.bi-6-square, 
+.bi-7-square,
+.bi-8-square, 
+.bi-9-square,
+.bi-1-square-fill,
+.bi-2-square-fill,
+.bi-3-square-fill,
+.ten-square{
+    color: #eda361 ;
+    
+}
+
+.frequencia-autor{
+    margin-right: 15px;
+}
+
+.btn-new{
+    background-color: #0e345a;
+    color: #fff;
+    border: none;
+    margin-top:20px;
+}
+.btn-new:hover{
+    background-color: #EDA361;
+    color: #fff;
+}
+
+
+.tabela-container{
+    /* background-color: #0e345a; */
+    padding: 10px;
+    color: #0e345a;
+
+}
+@media (width >= 80rem){
+    .div-btn-new{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn-new{
+        margin-top: 0;
+    }
+}
+/* .col-pie{
+    height: 40%;
+    display: flex;
+    align-items: center;
+} */

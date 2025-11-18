@@ -1,0 +1,35 @@
+.descricao-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-container{
+    min-width: 300px;
+    height: 150px;
+    border: none;
+    
+    
+}
+.card-container.bg-white{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.card-container.bg-blue{
+    background-color: #0e345a;
+    color: #fff;
+}
+.borda-numero{
+    min-width: 100px;
+    min-height: 100px;
+    /* min-height: 90px; */
+    /* max-width: 150px;
+    max-height: 100px; */
+    border-radius: 50px;
+    border: 9px solid #EDA361;
+    margin-left:10px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:25px;
+    font-weight: bold;
+    /* padding: 10px; */
+}

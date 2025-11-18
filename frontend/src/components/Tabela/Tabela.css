@@ -1,0 +1,13 @@
+
+
+th{
+    text-align: center;
+    color:#ffff!important;
+    background-color: #0e345a!important;
+   
+}
+td:nth-child(1), th.id-livros{
+    color:#eda361!important;
+    font-weight: bold;
+
+}

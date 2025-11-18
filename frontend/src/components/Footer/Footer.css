@@ -1,0 +1,33 @@
+footer{
+    background: #fff;
+    color: #0e345a;
+    /* height: 50px; */
+    padding: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    width: 100%;
+    
+}
+
+ul{
+    list-style: none;
+}
+div.text-footer{
+    font-family: "Noto Serif", serif;
+}
+div.text-footer p:nth-child(2){
+    color: #eda361;
+}
+
+div.footer-name{
+    border-top: 3px solid #eda361;
+    font-size: 17px;
+    padding-top: 10px;
+
+    
+}
+@media(width >= 80rem){
+    div.footer-name{
+    font-size: 20px;
+    }
+}

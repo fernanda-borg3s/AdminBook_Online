@@ -1,0 +1,89 @@
+.modal-content{
+    background-color: #0e345a7a;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+}
+.box-form{
+    height: 100%;
+    padding: 10px;
+    border: 5px solid #eda361;
+}
+.titulo-cadastrar h1, .form-label, div.btn-register-form button{
+    color: #eda361;
+    font-family: "Noto Serif", serif;
+    font-weight: bolder;
+}
+.titulo-cadastrar h1{
+    margin-left: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    
+}
+input.form-control, 
+textarea.form-control, 
+select.form-select
+{
+    background-color: #e2e2e2;
+}
+
+input.form-control:focus, 
+textarea.form-control:focus, 
+select.form-select:focus {
+    border: 2px solid #eda361;
+    box-shadow: none;
+  background-color: #fff;
+    color:#0e345a;
+  }
+
+div.btn-register-form button{
+    width: 80%;
+    height: 45px;
+    font-size: 20px;
+    /* border:none; */
+    text-transform: uppercase;
+}
+button.btn-salvar{
+    background-color: #eda361;
+    color: #0e345a!important;
+    border:none;
+    margin-bottom: 20px;
+
+   
+}
+button.btn-salvar:hover{
+    background-color: #0e345a;
+    color: #fff!important;
+}
+button.btn-fechar{
+    background-color: transparent;
+    color: #fff!important;
+    border: 1px solid #eda361;
+   
+}
+button.btn-fechar:hover{
+    background-color: #0e345a;
+    color: #fff!important;
+    border: none;
+}
+@media (width >=80rem){
+    .titulo-cadastrar h1{
+     font-size: 28px;
+    }
+
+   .titulo-cadastrar img{
+     width: 60px;
+    }
+    div.btn-register-form {
+        flex-direction: row!important;
+        justify-content: space-around;
+
+    }
+    div.btn-register-form button{
+        width: 30%;
+    }
+    button.btn-salvar{
+        margin-bottom: 0;
+    }
+}

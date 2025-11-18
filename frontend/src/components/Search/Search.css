@@ -1,0 +1,21 @@
+#Search{
+background-color: #eda361;
+border: 1px solid #eda361;
+
+
+}
+input[type='search']{
+    border: 1px solid #eda361;
+    border-right-width: 0;
+background-color: #fff!important;
+
+
+}
+.bi-search{
+color: #fff;
+}
+@media (width >= 70rem){
+    .input-search{
+        width: 40%;
+    }
+}
