@@ -18,13 +18,13 @@ const router = createHashRouter([
     path: '/',
     element: <Login/>,
     // errorElement:<ErrorPage/>,
-    
+
   },
   // {
   //   path: '/sobre',
   //   element: <Sobre/>,
   // },
-  
+
   {
     path:"/home",
     element: <NavTop/>,
@@ -42,12 +42,11 @@ const router = createHashRouter([
       //   path:"/home/livrosNFinalizados",
       //   element:<LivroNFinalizados/>
       // }
-   
+
     ]
   },
-  
-],
-{ basename: "/AdminBook_Online/" }
+
+]
 )
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
