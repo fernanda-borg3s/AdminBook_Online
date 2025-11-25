@@ -1,0 +1,68 @@
+# 📚 AdminBooks – Minha Biblioteca Pessoal
+
+O **AdminBooks** nasceu de uma necessidade muito simples: acompanhar os livros que eu lia.  
+Como leitora apaixonada e programadora, sempre quis uma plataforma onde eu pudesse:
+
+- Registrar minhas leituras com facilidade  
+- Acompanhar minha média anual  
+- Visualizar meu progresso  
+- Criar meus próprios desafios literários  
+- Escrever minhas opniões literárias
+
+Nenhuma ferramenta existente atendia exatamente ao que eu buscava — então decidi criar a minha, totalmente personalizado para as minhas necessidades.
+
+O AdminBooks é um conquista pessoal: é a fusão entre minha paixão por livros e meu amor por programação.  
+A cada nova funcionalidade, aprendo algo novo, organizo minha rotina de leitura e deixo tudo do meu jeito.
+
+---
+
+## Funcionalidades
+
+- **Cadastro de livros**  
+- **Status de leitura** (lido, lendo)  
+- **Dashboard de progresso mensal e anual**  
+- **Filtro e busca de títulos**  
+- **Interface amigável, limpa e responsiva**  
+
+---
+
+## Tecnologias utilizadas
+
+### Frontend
+- **React**
+- **Vite**
+- **Bootstrap**
+- **JavaScript**
+- **React Router Dom**
+
+### Backend
+- 🟩 **Node.js**
+- 🚏 **Express** – criação das rotas e API REST  
+
+### Deploy
+-  **Netlify** – hospedagem do frontend
+-  **Vercel** – hospedagem do backend
+
+---
+## 🎯 Objetivo pessoal
+
+Este projeto representa:
+
+* Meu progresso como desenvolvedora
+* Minha rotina como leitora dedicada
+* Meu esforço para transformar problemas reais em soluções práticas
+* Uma forma de documentar e treinar minhas habilidades em React, Node, Express, Bootstrap e Vite
+
+A ideia é continuar evoluindo o AdminBooks com:
+📌 sistema de login,
+📌 Controle de dados e validações simples
+📌 Recomendações utilizando IA,
+📌 Página de livros que quero ler,
+📌 Estatísticas mais avançadas,
+📌 Layouts mais refinados.
+
+
+Desenvolvido com muito 💛 por Fernanda Borges
+
+```
+
