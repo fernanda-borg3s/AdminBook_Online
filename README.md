@@ -14,8 +14,6 @@ Nenhuma ferramenta existente atendia exatamente ao que eu buscava — então dec
 O AdminBooks é um conquista pessoal: é a fusão entre minha paixão por livros e meu amor por programação.  
 A cada nova funcionalidade, aprendo algo novo, organizo minha rotina de leitura e deixo tudo do meu jeito.
 
----
-
 ## Funcionalidades
 
 - **Cadastro de livros**  
@@ -23,8 +21,6 @@ A cada nova funcionalidade, aprendo algo novo, organizo minha rotina de leitura 
 - **Dashboard de progresso mensal e anual**  
 - **Filtro e busca de títulos**  
 - **Interface amigável, limpa e responsiva**  
-
----
 
 ## Tecnologias utilizadas
 
@@ -43,7 +39,6 @@ A cada nova funcionalidade, aprendo algo novo, organizo minha rotina de leitura 
 -  **Netlify** – hospedagem do frontend
 -  **Vercel** – hospedagem do backend
 
----
 ## 🎯 Objetivo pessoal
 
 Este projeto representa:
@@ -63,6 +58,4 @@ A ideia é continuar evoluindo o AdminBooks com:
 
 
 Desenvolvido com muito 💛 por Fernanda Borges
-
-```
 
