@@ -4,9 +4,13 @@ import { Modal, Form, Row, Col } from 'react-bootstrap';
 import IconCadastar from '../../assets/Img/IconRegisterBook.png'
 import './ModalForm.css'
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 
 const baseURL = 'http://localhost:3000'
 const ModalForm = ({ show, handleClose }) => {
+  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
         titulo:"", 
         autor:"", 
@@ -37,34 +41,36 @@ const ModalForm = ({ show, handleClose }) => {
     setInputs({ ...inputs, [name]: newValue });
 
   };
-  
+
   const registrarLivro= async e => {
       e.preventDefault();
-      const {
-        titulo, 
-        autor, 
-        finalizado,
-        data_mes, 
-        data_ano, 
-        genero,
-        formato_livro,
-        observacoes
-      } = inputs;
+ //ONCLICK DESATIVADO
+
+      // const {
+      //   titulo, 
+      //   autor, 
+      //   finalizado,
+      //   data_mes, 
+      //   data_ano, 
+      //   genero,
+      //   formato_livro,
+      //   observacoes
+      // } = inputs;
     
-    try {
-        const body = {titulo, autor, finalizado, data_mes, data_ano, genero, formato_livro, observacoes};
+    // try {
+    //     const body = {titulo, autor, finalizado, data_mes, data_ano, genero, formato_livro, observacoes};
   
-        const response = await axios.post(`${baseURL}/livros/registrarLivro`, body, {
-          headers: {
-            "Content-type": "application/json"
-          }
-        });
-        toast.success("Livro registrado com sucesso!");
-        handleClose();
-      } catch (err) {
-        console.error("Erro ao registrar novo livro")
-        // toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
-      }
+    //     const response = await axios.post(`${baseURL}/livros/registrarLivro`, body, {
+    //       headers: {
+    //         "Content-type": "application/json"
+    //       }
+    //     });
+    //     toast.success("Livro registrado com sucesso!");
+    //     handleClose();
+    //   } catch (err) {
+    //     console.error("Erro ao registrar novo livro")
+    //     toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
+    //   }
     }
   
   
@@ -176,7 +182,7 @@ const ModalForm = ({ show, handleClose }) => {
       </Modal.Body>
       <div className="btn-register-form d-flex align-items-center flex-column mt-3 mb-3">
        
-        <button type='submit' className='btn-salvar' onClick={registrarLivro}>Registrar</button>
+        <button type='submit' className='btn-salvar' onClick={handleClose}>Registrar</button>
           <button className='btn-fechar' type='' onClick={handleClose}>Fechar</button>
       </div>
       </div>

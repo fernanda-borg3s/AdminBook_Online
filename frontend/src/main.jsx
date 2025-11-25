@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider, createHashRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import  './index.css'
 import { NavTop } from './components/NavTop/NavTop.jsx'
 import Home from './pages/Home/Home.jsx'
@@ -13,7 +13,7 @@ import Login from './pages/Login/Login.jsx'
 
 
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Login/>,
@@ -37,7 +37,7 @@ const router = createHashRouter([
       {
         path:"/home/livrosLidos",
         element:<LivroLidos/>
-      },
+      }
       // {
       //   path:"/home/livrosNFinalizados",
       //   element:<LivroNFinalizados/>

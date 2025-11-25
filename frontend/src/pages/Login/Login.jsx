@@ -1,15 +1,17 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import './Login.css'
 import LogoBanner from '../../assets/Img/LogoBanner.png'
 import LogoNoBg from '../../assets/Img/LogoNoBg.png'
 import About from '../../assets/Img/About.png'
 import BookNoBg from '../../assets/Img/IconBookNoBg.png'
+import { useNavigate } from "react-router-dom";
+
 
 export default function Login(){
+  const navigate = useNavigate();
+
     const fazerLogin = () => {
-        window.location.href = 'http://localhost:5173/home';
+       navigate("/home");
     }
 
     return (

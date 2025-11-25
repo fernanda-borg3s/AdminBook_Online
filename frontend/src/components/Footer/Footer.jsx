@@ -37,7 +37,7 @@ export default function Footer(){
             </div>
            
         <div className='footer-name d-flex justify-content-center'>
-            Desenvolvido por Fernanda Borges | 2024
+            Desenvolvido por Fernanda Borges | 2025
         </div>
     </footer>
     </>)

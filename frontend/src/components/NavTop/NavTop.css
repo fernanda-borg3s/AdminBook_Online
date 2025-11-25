@@ -1,8 +1,8 @@
 
-#nav-top, .offcanvas{
-    /* background-color: #007090 !important;
-    color: #fff; */
+#nav-top{
+  
     background-color: #fff;
+    font-weight: bold;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 .navbar-toggler{
@@ -11,4 +11,10 @@
 
 .navbar-toggler:focus{
     box-shadow: none;
+}
+.nav-link{
+    color: #0e345a!important;
+}
+.nav-link:hover{
+    color: #eda361!important;
 }
