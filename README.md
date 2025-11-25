@@ -32,14 +32,14 @@ A cada nova funcionalidade, aprendo algo novo, organizo minha rotina de leitura 
 - **React Router Dom**
 
 ### Backend
-- 🟩 **Node.js**
-- 🚏 **Express** – criação das rotas e API REST  
+- **Node.js**
+- **Express** – criação das rotas e API REST  
 
 ### Deploy
 -  **Netlify** – hospedagem do frontend
 -  **Vercel** – hospedagem do backend
 
-## 🎯 Objetivo pessoal
+## Objetivo pessoal
 
 Este projeto representa:
 
@@ -49,12 +49,12 @@ Este projeto representa:
 * Uma forma de documentar e treinar minhas habilidades em React, Node, Express, Bootstrap e Vite
 
 A ideia é continuar evoluindo o AdminBooks com:
-📌 sistema de login,
-📌 Controle de dados e validações simples
-📌 Recomendações utilizando IA,
-📌 Página de livros que quero ler,
-📌 Estatísticas mais avançadas,
-📌 Layouts mais refinados.
+- 📌 sistema de login,
+- 📌 Controle de dados e validações simples
+- 📌 Recomendações utilizando IA,
+- 📌 Página de livros que quero ler,
+- 📌 Estatísticas mais avançadas,
+- 📌 Layouts mais refinados.
 
 
 Desenvolvido com muito 💛 por Fernanda Borges
