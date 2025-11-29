@@ -1,16 +1,12 @@
 import  {useState} from 'react';
-import axios from 'axios';
 import { Modal, Form, Row, Col } from 'react-bootstrap';
 import IconCadastar from '../../assets/Img/IconRegisterBook.png'
 import './ModalForm.css'
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+// import livrosService from '../../services/livrosService.js';
 
 
-const baseURL = 'http://localhost:3000'
+
 const ModalForm = ({ show, handleClose }) => {
-  const navigate = useNavigate();
-
   const [inputs, setInputs] = useState({
         titulo:"", 
         autor:"", 
@@ -30,16 +26,13 @@ const ModalForm = ({ show, handleClose }) => {
   };
   const onChange = e => {
     const { name, value } = e.target;
- // Verifica se o campo deve ser capitalizado
- let newValue = value;
- if (name === "titulo" || name === "autor" || name === "genero" || name === "data_ano") {
-   newValue = capitalizeWords(value); // Aplica capitalize apenas nos campos desejados
- }
-   
-
+  // Verifica se o campo deve ser capitalizado
+    let newValue = value;
+       if (name === "titulo" || name === "autor" || name === "genero" || name === "data_ano") {
+          newValue = capitalizeWords(value); // Aplica capitalize apenas nos campos desejados
+       }
     // Atualiza o estado com o valor capitalizado
     setInputs({ ...inputs, [name]: newValue });
-
   };
 
   const registrarLivro= async e => {
@@ -58,15 +51,19 @@ const ModalForm = ({ show, handleClose }) => {
       // } = inputs;
     
     // try {
-    //     const body = {titulo, autor, finalizado, data_mes, data_ano, genero, formato_livro, observacoes};
-  
-    //     const response = await axios.post(`${baseURL}/livros/registrarLivro`, body, {
+    //VERSAO COM SERVICE
+         //const livroData = {titulo, autor, finalizado, data_mes, data_ano, genero, formato_livro, observacoes};
+       // const data = await livrosService.registerLivro(livroData);
+         // toast.success("Livro registrado com sucesso!");
+    //     handleClose();
+   
+  //VERSÃO ANTERIOR PARA TESTE
+    //      const data = await livrosService.post(`/livros/registrarLivro`, body, {
     //       headers: {
     //         "Content-type": "application/json"
     //       }
     //     });
-    //     toast.success("Livro registrado com sucesso!");
-    //     handleClose();
+   
     //   } catch (err) {
     //     console.error("Erro ao registrar novo livro")
     //     toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
@@ -76,27 +73,34 @@ const ModalForm = ({ show, handleClose }) => {
   
   return (
     <>
-    
     <Modal show={show} onHide={handleClose} size="lg" >
       <div className="box-form">
         <div className="titulo-cadastrar d-flex align-items-center justify-content-center mt-3 mb-3">
           <img src={IconCadastar} width="50" alt="" />
           <h1 className=''>Cadastrar Livro</h1>
         </div>
-    
-      <Modal.Body className=''>
-      <Form >
-      <Form.Group className="mb-3">
-        <Form.Label>Título:</Form.Label>
-        <Form.Control type="text" required placeholder="Título do Livro" name="titulo" onChange={onChange}/>
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Autor(a):</Form.Label>
-        <Form.Control type="text" required placeholder="Autor(a); Autor(a)" name="autor" onChange={onChange}/>
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Gênero Predominante:</Form.Label>
-         <Form.Select aria-label="Gênero" required name="genero" onChange={onChange} >
+
+        <Modal.Body className=''>
+          <Form >
+            <Form.Group className="mb-3">
+              <Form.Label>Título:</Form.Label>
+              <Form.Control type="text" required 
+              placeholder="Título do Livro" 
+              name="titulo" 
+              onChange={onChange}/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Autor(a):</Form.Label>
+              <Form.Control type="text" required 
+              placeholder="Autor(a); Autor(a)" 
+              name="autor" 
+              onChange={onChange}/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Gênero Predominante:</Form.Label>
+              <Form.Select aria-label="Gênero" required 
+              name="genero" 
+              onChange={onChange} >
                 <option value="">Selecione</option>
                 <option value="Ação, Aventura">Ação, Aventura</option>
                 <option value="Artigos">Artigos</option>
@@ -127,67 +131,77 @@ const ModalForm = ({ show, handleClose }) => {
                 <option value="Tecnologia">Tecnologia</option>
                 <option value="Thriller Psicológico">Thriller Psicológico</option>
                 <option value="Thriller, Horror">Thriller, Horror</option>
-            </Form.Select>
-      </Form.Group>
-      <Row xs={1} md={4} className='mt-2'>
-        <Col>
-            <Form.Label>Livro Finalizado?</Form.Label>
-            <Form.Select aria-label="Finalizado" required name="finalizado" onChange={onChange} >
-                <option value="">Selecione</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-            </Form.Select>
-        </Col>
-        <Col>
-            <Form.Label >Mês</Form.Label>
-            <Form.Select aria-label="mes" required name="data_mes" onChange={onChange} >
-            <option value=''>Selecione</option>
-                <option value='Sem Registro'>Sem Registro</option>
-                <option value="Janeiro">Janeiro</option>
-                <option value="Fevereiro">Fevereiro</option>
-                <option value="Março">Março</option>
-                <option value="Abril">Abril</option>
-                <option value="Maio">Maio</option>
-                <option value="Junho">Junho</option>
-                <option value="Julho">Julho</option>
-                <option value="Agosto">Agosto</option>
-                <option value="Setembro">Setembro</option>
-                <option value="Outubro">Outubro</option>
-                <option value="Novembro">Novembro</option>
-                <option value="Dezembro">Dezembro</option>
-            </Form.Select>
-        </Col>
-        <Col>
-        <Form.Group className="mb-3">
-        <Form.Label>Ano:</Form.Label>
-        <Form.Control type="text" required placeholder="AAAA ou Sem Registro" name="data_ano" onChange={onChange} />
-      </Form.Group>
-        </Col>
-        <Col>
-            <Form.Label>Formato:</Form.Label>
-            <Form.Select aria-label="Formato" required name="formato_livro" onChange={onChange}>
-                <option value="">Selecione</option>
-                <option value="Digital">Digital</option>
-                <option value="Físico">Físico</option>
-            </Form.Select>
-        </Col>
-      </Row>
-   
-      <Form.Group className="mb-3" >
-        <Form.Label>Observações</Form.Label>
-        <Form.Control as="textarea" placeholder="Críticas, elogios, comentários, sugestões..." rows={3} name="observacoes" onChange={onChange}/>
-      </Form.Group>
-    
-      </Form>
-      </Modal.Body>
-      <div className="btn-register-form d-flex align-items-center flex-column mt-3 mb-3">
-       
-        <button type='submit' className='btn-salvar' onClick={handleClose}>Registrar</button>
+              </Form.Select>
+            </Form.Group>
+            <Row xs={1} md={4} className='mt-2'>
+              <Col>
+                <Form.Label>Livro Finalizado?</Form.Label>
+                <Form.Select aria-label="Finalizado" required 
+                name="finalizado" 
+                onChange={onChange} >
+                  <option value="">Selecione</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </Form.Select>
+              </Col>
+              <Col>
+                <Form.Label >Mês</Form.Label>
+                <Form.Select aria-label="mes" required 
+                name="data_mes" 
+                onChange={onChange} >
+                  <option value=''>Selecione</option>
+                  <option value='Sem Registro'>Sem Registro</option>
+                  <option value="Janeiro">Janeiro</option>
+                  <option value="Fevereiro">Fevereiro</option>
+                  <option value="Março">Março</option>
+                  <option value="Abril">Abril</option>
+                  <option value="Maio">Maio</option>
+                  <option value="Junho">Junho</option>
+                  <option value="Julho">Julho</option>
+                  <option value="Agosto">Agosto</option>
+                  <option value="Setembro">Setembro</option>
+                  <option value="Outubro">Outubro</option>
+                  <option value="Novembro">Novembro</option>
+                  <option value="Dezembro">Dezembro</option>
+                </Form.Select>
+              </Col>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Ano:</Form.Label>
+                  <Form.Control type="text" required 
+                  placeholder="AAAA ou Sem Registro" 
+                  name="data_ano" 
+                  onChange={onChange} />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Label>Formato:</Form.Label>
+                <Form.Select aria-label="Formato" required 
+                name="formato_livro" 
+                onChange={onChange}>
+                  <option value="">Selecione</option>
+                  <option value="Digital">Digital</option>
+                  <option value="Físico">Físico</option>
+                </Form.Select>
+              </Col>
+            </Row>
+
+            <Form.Group className="mb-3" >
+              <Form.Label>Observações</Form.Label>
+              <Form.Control as="textarea" 
+              placeholder="Críticas, elogios, comentários, sugestões..." 
+              rows={3} 
+              name="observacoes" 
+              onChange={onChange}/>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <div className="btn-register-form d-flex align-items-center flex-column mt-3 mb-3">
+          <button type='submit' className='btn-salvar' onClick={handleClose}>Registrar</button>
           <button className='btn-fechar' type='' onClick={handleClose}>Fechar</button>
-      </div>
-      </div>
+        </div>
+    </div>
     </Modal>
-    
     </>
   );
 };

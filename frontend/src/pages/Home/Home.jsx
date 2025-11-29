@@ -1,17 +1,18 @@
 
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Cards from '../../components/Cards/Cards.jsx'
 import { Container, Row, Col, Button } from 'react-bootstrap'
+import { toast } from "react-toastify";
 import Tabela from '../../components/Tabela/Tabela'
 import Grafico from '../../components/Graficos/Graficos.jsx'
 import './Home.css'
 import ModalForm from '../../components/ModalForm/ModalForm.jsx';
 import Paginacao from '../../components/Paginacao/Paginacao.jsx';
-const baseURL = 'http://localhost:3000'
-const ITEMS_PER_PAGE = 12;
 import Footer from '../../components/Footer/Footer.jsx';
 import Search from '../../components/Search/Search.jsx';
+import livrosService from '../../services/livrosService.js';
+const ITEMS_PER_PAGE = 12;
+
 
 export default function Home(){
 
@@ -19,13 +20,12 @@ const [todosLivros, setTodosLivros] = useState([]);
 useEffect(() => {
   const dataAllLivro = async () => {
     try {
-      const response = await axios.get(`${baseURL}/livros/todosLivros`);
-        setTodosLivros(response.data.data);
-        
+      const data = await livrosService.getAllLivros();
+      setTodosLivros(data.data); 
       
     } catch (error) {
       console.error('Erro ao recuperar dados:', error);
-  // toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
+      toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
      }
   }
   dataAllLivro();
@@ -178,22 +178,6 @@ const [showModal, setShowModal] = useState(false);
 const handleShow = () => setShowModal(true);
 const handleClose = () => setShowModal(false);
 ///////////////// FIM MODAL DO FORMULARIO
-const [qtdTotal, setQtdTotal] = useState([]);
-
-useEffect(() => {
-       
-  const qtdTotalLivros = async () => {
-    try {
-      const response = await axios.get(`${baseURL}/livros/todosLivros`);
-        setQtdTotal(response.data.data);
-
-    } catch (error) {
-      console.error('Erro ao recuperar dados:', error);
-
-     }
-  }
-  qtdTotalLivros();
-  }, []);
   
   const mesesMapeados = {
     'Janeiro': '0',
@@ -214,14 +198,14 @@ useEffect(() => {
   const mesAtual = dataAtual.getMonth()
   const anoAtual = dataAtual.getFullYear()
 //quantidade total todos livros
-const countQtdTotalLivro = qtdTotal.length;
+const countQtdTotalLivro = todosLivros.length;
    //total do mes
    const nomeMesAtual = Object.keys(mesesMapeados).find(key => mesesMapeados[key] === String(mesAtual));
-   const contagemLivrosMesAnoAtual = qtdTotal.filter(item => {
+   const contagemLivrosMesAnoAtual = todosLivros.filter(item => {
      return item.data_mes === nomeMesAtual && item.data_ano === String(anoAtual)
    }).length;
 //total do ano
-const contagemLivrosAnoAtual = qtdTotal.filter(item => {
+const contagemLivrosAnoAtual = todosLivros.filter(item => {
   return item.data_ano === String(anoAtual)
 }).length;
 
@@ -229,10 +213,10 @@ const contagemLivrosAnoAtual = qtdTotal.filter(item => {
 
 
   const [tableAllBookCurrentPage, setTableAllBookCurrentPage] = useState(1);
-  const tableAllBookTotalPages = Math.ceil(qtdTotal.length / ITEMS_PER_PAGE);
+  const tableAllBookTotalPages = Math.ceil(todosLivros.length / ITEMS_PER_PAGE);
       const [busca, setBusca] = useState('');
       const lowerBusca = busca.toLowerCase();
-      const filteredAllBook = qtdTotal.filter((disponivel) => {
+      const filteredAllBook = todosLivros.filter((disponivel) => {
         return Object.values(disponivel).some(value => typeof value === 'string' && value.toLowerCase().includes(lowerBusca));
       });
   const tableAllBookPaginatedData = filteredAllBook.slice(

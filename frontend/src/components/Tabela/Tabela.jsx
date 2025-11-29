@@ -1,11 +1,8 @@
-import { Container, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import './Tabela.css'
 export default function Tabela({ children}){
     return (
         <>
-{/*     
-          <h4 className="mt-3">{firstTitulo}</h4>
-          <hr /> */}
             <Table responsive bordered>
             <thead>
               <tr>

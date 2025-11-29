@@ -50,8 +50,8 @@ export const database_adminBooks = [
     titulo:"Um Dia",
     autor:"David Nicholls",
     finalizado:"Sim",
-    data_ano:"Junho",
-    data_mes:"2020",
+    data_mes:"Junho",
+    data_ano:"2020",
     genero:"Romance Contemporâneo",
     formato_livro:"Digital",
     observacoes:"História de encontros e desencontros ao longo dos anos."

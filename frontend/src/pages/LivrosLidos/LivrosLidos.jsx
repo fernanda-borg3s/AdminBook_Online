@@ -1,14 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 import Cards from '../../components/Cards/Cards.jsx'
 import Tabela from '../../components/Tabela/Tabela.jsx'
 import Grafico from "../../components/Graficos/Graficos.jsx";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Paginacao from "../../components/Paginacao/Paginacao.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Search from "../../components/Search/Search.jsx";
-const baseURL = 'http://localhost:3000'
-const ITEMS_PER_PAGE = 20;
+import livrosService from '../../services/livrosService.js';
+const ITEMS_PER_PAGE = 12;
 
 
 export default function LivroLidos(){
@@ -17,10 +17,11 @@ export default function LivroLidos(){
   useEffect(()=>{
     const livrosLidos = async () =>{
       try {
-        const responde = await axios.get(`${baseURL}/livros/livrosLidos`);
-        setLivrosLidos(responde.data.data);
+        const data = await livrosService.getAllLivros();
+        setLivrosLidos(data.data); 
       } catch (error) {
         console.error('Erro ao recuperar dados:', error);
+         toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
       }
     }
    livrosLidos();
@@ -128,36 +129,7 @@ livrosLidos.forEach(item => {
           },
     };
     
-    const dataPie = {
-        labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [
-            {
-                label: 'Gráfico de Pizza',
-                data: [300, 50, 100],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 205, 86, 0.2)',
-                ],
-                hoverOffset: 4,
-            
-            },
-        ],
-    };
     
-    const optionsPie = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'top',
-        },
-        title: {
-          display: true,
-          text: 'Gráfico de todos os livros',
-        },
-      },
-    };
     const totalLivrosLidos = livrosLidos.length;
     //total do mes
     const nomeMesAtual = Object.keys(mesesMapeados).find(key => mesesMapeados[key] === String(mesAtual));
@@ -194,30 +166,32 @@ livrosLidos.forEach(item => {
     return (
       <>
         <Container>
-          <h1>Livros Finalizados</h1>
+          <h1>Livros Lidos</h1>
             <Row className='mt-4 mb-4'>
               <Col className="">
                 <Cards
                   classCor='bg-blue' 
                   titulo="Total de Livros Lidos"
-                  descricao="Todos os livros finalizados"
+                  descricao="Todos os livros lidos"
                   numero={totalLivrosLidos}/>
               </Col>
               <Col className="">
                 <Cards 
+                  classCor='bg-white'
                   titulo="Total do Mês"
-                  descricao="Livros finalizados nesse mês"
+                  descricao="Livros lidos nesse mês"
                   numero={contagemLivrosMesAnoAtual}/>
               </Col>
               <Col className="">
                 <Cards 
                   classCor='bg-blue'
                   titulo="Total do Ano"
-                  descricao="Livros finalizados nesse ano"
+                  descricao="Livros lidos nesse ano"
                   numero={contagemLivrosAnoAtual}/>
               </Col>
               <Col className="">
                 <Cards 
+                  classCor='bg-white'
                   titulo="Média Anual"
                   descricao="Média de livros lidos por ano"
                   numero={mediaAnual}/>

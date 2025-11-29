@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
-import { Pie, Bar } from 'react-chartjs-2';
+
 
 Chart.register(...registerables);
 
