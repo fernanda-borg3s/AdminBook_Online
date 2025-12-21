@@ -1,5 +1,4 @@
-import React from 'react';
-import ErrorImg from '../../assets/img/Bg-error.png';
+import ErrorImg from '../../assets/Img/BgError.png';
 import './ErrorPage.css';
 
 const ErrorPage = () => {
