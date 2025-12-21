@@ -26,7 +26,7 @@ export function NavTop(){
                 <Nav className="ms-auto">
                   <Nav.Link href="/home">Início</Nav.Link>
                   <Nav.Link href="/home/livrosLidos">Livros Lidos</Nav.Link>
-                  <Nav.Link disabled href="#">Livros não finalizados</Nav.Link>
+                  <Nav.Link href="/home/livroNFinalizados">Livros não finalizados</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
           </Container>

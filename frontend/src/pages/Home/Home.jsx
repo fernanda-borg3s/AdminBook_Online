@@ -24,7 +24,7 @@ useEffect(() => {
       setTodosLivros(data.data); 
       
     } catch (error) {
-      console.error('Erro ao recuperar dados:', error);
+      // console.error('Erro ao recuperar dados:', error);
       toast.error("Ocorreu um erro ao conectar ao servidor, tente novamente mais tarde")
      }
   }

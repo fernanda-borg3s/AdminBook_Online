@@ -5,8 +5,7 @@ import  './index.css'
 import { NavTop } from './components/NavTop/NavTop.jsx'
 import Home from './pages/Home/Home.jsx'
 import LivroLidos from './pages/LivrosLidos/LivrosLidos.jsx'
-import LivroNFinalizados from './pages/LivrosNFinalizados/LivrosNFinalizados.jsx'
-// import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
+import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Login from './pages/Login/Login.jsx'
@@ -17,32 +16,21 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Login/>,
-    // errorElement:<ErrorPage/>,
-
+    errorElement:<ErrorPage/>,
   },
-  // {
-  //   path: '/sobre',
-  //   element: <Sobre/>,
-  // },
-
   {
     path:"/home",
     element: <NavTop/>,
-    // errorElement:<ErrorPage/>,
+    errorElement:<ErrorPage/>,
     children: [
       {
         path: "/home",
-        element:<Home/>,
+        element:<Home/>
       },
       {
         path:"/home/livrosLidos",
         element:<LivroLidos/>
-      }
-      // {
-      //   path:"/home/livrosNFinalizados",
-      //   element:<LivroNFinalizados/>
-      // }
-
+      },
     ]
   },
 

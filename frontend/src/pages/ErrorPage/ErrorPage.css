@@ -1,0 +1,42 @@
+div.bg-error {
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+}
+div.bg-error img{
+  height: 100vh;
+}
+div.bg-error h1{
+    font-size: 120px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height:0.8;
+
+}
+div.bg-error .container-error-text{
+    width: 90%;
+    position: absolute;
+    bottom: 0px;
+    color: #0E345A;
+    
+}
+div.container-error-text a{
+    color: #EDA361;
+    font-weight: bold;
+}
+@media (width >= 80rem){
+  div.bg-error img{
+    min-width: 65%;
+  
+  }
+  div.bg-error .container-error-text{
+    width: 35%;
+    bottom: 1px;
+}
+}
