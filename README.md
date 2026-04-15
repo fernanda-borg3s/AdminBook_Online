@@ -22,6 +22,10 @@ A cada nova funcionalidade, aprendo algo novo, organizo minha rotina de leitura 
 - **Filtro e busca de títulos**  
 - **Interface amigável, limpa e responsiva**  
 
+## Preview
+<img width="1057" height="484" alt="image" src="https://github.com/user-attachments/assets/9ac14c3b-a271-4cb1-89cd-fa2bc2dc3766" />
+<img width="1095" height="897" alt="image" src="https://github.com/user-attachments/assets/32c76b45-b777-46d3-adc5-7730076f3f95" />
+
 ## Tecnologias utilizadas
 
 ### Frontend
