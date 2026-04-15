@@ -60,6 +60,10 @@ A ideia é continuar evoluindo o AdminBooks com:
 - 📌 Estatísticas mais avançadas,
 - 📌 Layouts mais refinados.
 
-
+## Acesso online
+1. Clique no link abaixo:
+```bash
+https://adminbooks.netlify.app/
+```
 Desenvolvido com muito 💛 por Fernanda Borges
 
